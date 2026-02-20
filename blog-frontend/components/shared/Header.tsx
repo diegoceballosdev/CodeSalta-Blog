@@ -48,14 +48,14 @@ export const Header = () => {
         {/* Search */}
         <SearchForm />
 
-        <div className="hidden md:flex items-center gap-1">
+        {/* <div className="hidden md:flex items-center gap-1">
           <FaGlobe size={24} color="#333" />
 
           <select name="" id="" className="bg-transparent">
             <option value="es">ES</option>
             <option value="en">EN</option>
           </select>
-        </div>
+        </div> */}
 
         <div className="flex items-center md:hidden gap-6">
           <button
@@ -78,8 +78,14 @@ export const Header = () => {
 
       {/* Search in Mobile */}
       {isSearchOpen && (
-        <div className="md:hidden fixed inset-0 bg-black/50 z-50 flex items-start justify-center pt-20">
-          <div className="bg-white rounded-lg p-6 m-4 w-full max-w-md shadow-xl">
+        <div
+          className="md:hidden fixed inset-0 bg-black/50 z-50 flex items-start justify-center pt-20"
+          onClick={() => setIsSearchOpen(false)}
+        >
+          <div
+            className="bg-white rounded-lg p-6 m-4 w-full max-w-md shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-semibold">Buscar Publicaciones</h3>
               <button
@@ -150,13 +156,13 @@ export const Header = () => {
           </nav>
 
           {/* Language Selector */}
-          <div className="flex items-center gap-2 pt-4 border-t">
+          {/* <div className="flex items-center gap-2 pt-4 border-t">
             <FaGlobe size={20} color="#333" />
             <select className="bg-transparent flex-1 py-2">
               <option value="es">Español</option>
               <option value="en">Inglés</option>
             </select>
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -4,8 +4,14 @@ import Link from "next/link";
 import { Logo } from "./Logo";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import toast from "react-hot-toast";
 
 export const Footer = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    toast.success("¡Gracias por suscribirte!");
+  };
+
   return (
     <footer className="bg-black text-white py-10">
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -55,7 +61,7 @@ export const Footer = () => {
           </ul>
         </div>
 
-        <form className="flex flex-col gap-2">
+        <form onSubmit={handleSubmit} className="flex flex-col gap-2">
           <p>Recibe Actualizaciones</p>
           <div className="flex flex-col lg:flex-row gap-2">
             <input
@@ -70,7 +76,7 @@ export const Footer = () => {
           {/* SOCIAL LINKS */}
           <div className="flex gap-6 justify-center mt-4">
             <a
-              href="#"
+              href="https://www.facebook.com/"
               className="hover:text-primary transition-all"
               target="_blank"
               rel="noopener noreferrer"
@@ -80,7 +86,7 @@ export const Footer = () => {
               <FaFacebook className="size-6" />
             </a>
             <a
-              href="#"
+              href="https://www.x.com/"
               className="hover:text-primary transition-all"
               target="_blank"
               rel="noopener noreferrer"
@@ -90,7 +96,7 @@ export const Footer = () => {
               <FaXTwitter className="size-6" />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/"
               className="hover:text-primary transition-all"
               target="_blank"
               rel="noopener noreferrer"
@@ -100,7 +106,7 @@ export const Footer = () => {
               <FaInstagram className="size-6" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/"
               className="hover:text-primary transition-all"
               target="_blank"
               rel="noopener noreferrer"
@@ -110,7 +116,7 @@ export const Footer = () => {
               <FaLinkedin className="size-6" />
             </a>
             <a
-              href="#"
+              href="https://www.youtube.com/"
               className="hover:text-primary transition-all"
               target="_blank"
               rel="noopener noreferrer"

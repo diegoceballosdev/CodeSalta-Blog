@@ -37,6 +37,18 @@ export async function getFeaturedPost(): Promise<Post[]> {
   return data.data;
 }
 
+export async function getLastPost(): Promise<Post[]> {
+  const data = await fetchStrapi("/posts", {
+    populate: "*",
+    sort: ["publishedAt:desc"],
+    pagination: {
+      pageSize: 5,
+    },
+  });
+
+  return data.data;
+}
+
 export async function getPostBySlug(slug: string): Promise<Post> {
   const data = await fetchStrapi("/posts", {
     populate: {

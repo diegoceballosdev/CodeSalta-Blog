@@ -7,7 +7,6 @@ import {
   Separator,
 } from "@/components";
 import { NewsletterSection } from "@/components/home/NewsletterSection";
-import { posts } from "@/data";
 import { getPostBySlug } from "@/lib/api";
 import { formatDate } from "@/lib/utils";
 import { BiCalendar } from "react-icons/bi";
@@ -63,7 +62,7 @@ export default async function PostPage({
 
         <AuthorCard />
 
-        <RelatedPosts posts={posts} slug={post.slug} />
+        <RelatedPosts posts={post.category.posts} slug={post.slug} />
 
         <NewsletterSection />
       </article>

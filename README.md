@@ -1,4 +1,4 @@
-# 🚀 CodeSalta Frontend
+# 🚀 CodeSalta
 
 **CodeSalta** es una aplicación web desarrollada con **Next.js 16** y **React 19**, diseñada para ofrecer una experiencia de lectura fluida, rápida y moderna.
 
